@@ -1,6 +1,6 @@
 import requests
 from django.core.management.base import BaseCommand
-from university_review_api.apps.universities.models import University
+from apps.universities.models import University
 
 class Command(BaseCommand):
     help = 'Import universities from the Hipolabs API'

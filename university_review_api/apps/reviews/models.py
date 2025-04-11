@@ -12,18 +12,12 @@ class Review(models.Model):
         on_delete=models.CASCADE,
         related_name='reviews'
     )
-    rating = models.PositiveSmallIntegerField(
+    rating = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)]
     )
     review_text = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
-    class Meta:
-        verbose_name = 'Review'
-        verbose_name_plural = 'Reviews'
-        ordering = ['-created_at']
-        unique_together = ['university', 'user']  # One review per university per user
-    
     def __str__(self):
-        return f"{self.user.username}'s review of {self.university.name}"
+        return f"Review by {self.user.username} for {self.university.name}"
