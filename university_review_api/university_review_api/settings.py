@@ -27,11 +27,12 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     
-    # Local apps - simplified paths
-    'apps.users',
+    # Local apps - correct paths for nested structure
+    'apps.users',  
     'apps.universities',
     'apps.reviews',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
